@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Reframe | Meaningful Conversations & Different Perspectives</title>
+   
+    <meta
+    name="description"
+    content="Reframe is a global community where curious minds come together to discuss meaningful questions, share perspectives, and see things differently."
+>
+
+<meta
+    name="keywords"
+    content="Reframe, discussion community, meaningful conversations, different perspectives, youth community, global community"
+>
+
+<meta name="author" content="Reframe">
+<meta name="theme-color" content="#12114C">
+
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Open Graph -->
+<meta property="og:title"
+      content="Reframe | See it differently.">
+
+<meta property="og:description"
+      content="A global community for meaningful conversations, different perspectives, and ideas worth exploring.">
+
+<meta property="og:type"
+      content="website">
+
+<meta property="og:image"
+      content="images/reframe-preview.png">
+
+<!-- Twitter / X -->
+<meta name="twitter:card"
+      content="summary_large_image">
+
+<meta name="twitter:title"
+      content="Reframe | See it differently.">
+
+<meta name="twitter:description"
+      content="A global community for meaningful conversations and different perspectives.">
+
+<meta name="twitter:image"
+      content="images/reframe-preview.png">
+
+      <link rel="icon" type="image/png" href="images/imagesfavicon.png.png">
+
+      <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Reframe",
+    "description": "A global community where curious minds come together to discuss meaningful questions, share perspectives, and discover new ways of thinking.",
+    "logo": "images/favicon.png"
+}
+</script>
+</head>
+
+<body>
+
+    <!-- NAVIGATION -->
+    <header class="navbar">
+        <a href="#top" class="logo">Reframe</a>
+
+        <nav>
+            <a href="#previous">Previous Conversations</a>
+            <a href="#mark">Leave A Mark</a>
+            <a href="#about">About Us</a>
+            <a href="#join">Join Us</a>
+        </nav>
+    </header>
+
+
+    <main id="top">
+
+        <!-- HERO -->
+        <section class="hero">
+
+            <div class="hero-intro">
+                <h1>We grow by talking.</h1>
+
+                <p>
+                    Reframe is a community where curious minds come together
+                    to discuss meaningful questions, share perspectives,
+                    and discover new ways of thinking.
+                </p>
+            </div>
+
+
+            <div class="next-topic">
+                <h2>this week's topic:</h2>
+
+                <div class="topic-card">
+                    <span>MUSIC</span>
+                </div>
+            </div>
+
+        </section>
+
+
+        <!-- COUNTDOWN -->
+        <section class="countdown-section">
+
+            <div class="time-box">
+                <div class="number" id="days">00</div>
+                <div class="line"></div>
+                <div class="label">Day</div>
+            </div>
+
+            <div class="separator">
+                <span>•</span>
+                <span>•</span>
+            </div>
+
+            <div class="time-box">
+                <div class="number" id="hours">00</div>
+                <div class="line"></div>
+                <div class="label">Hour</div>
+            </div>
+
+            <div class="separator">
+                <span>•</span>
+                <span>•</span>
+            </div>
+
+            <div class="time-box">
+                <div class="number" id="minutes">00</div>
+                <div class="line"></div>
+                <div class="label">Minute</div>
+            </div>
+
+            <div class="separator">
+                <span>•</span>
+                <span>•</span>
+            </div>
+
+            <div class="time-box">
+                <div class="number" id="seconds">00</div>
+                <div class="line"></div>
+                <div class="label">Second</div>
+            </div>
+
+        </section>
+
+        <p class="timezone-note" id="timezone-note">
+            Next conversation: Sunday at 17:00 Türkiye time (UTC+3).
+        </p>
+
+
+        <!-- PREVIOUS CONVERSATIONS -->
+        <section id="previous" class="previous-section">
+
+            <div class="section-title">
+                <h2>Previous Conversations</h2>
+            </div>
+
+            <div class="conversation-carousel">
+
+                <button class="carousel-button previous-button">
+                    ‹
+                </button>
+
+                <div class="cards-track" id="cards-track">
+
+                    <article class="conversation-card">
+                        <img src="images/foto1.png" alt="Previous conversation">
+                        <div class="card-content">
+                            <h3>Example</h3>
+                            <p>
+                                A short summary of the conversation goes here.
+                            </p>
+                        </div>
+                    </article>
+
+                    <article class="conversation-card active">
+                        <img src="images/foto2.png" alt="Previous conversation">
+                        <div class="card-content">
+                            <h3>Example</h3>
+                            <p>
+                                A short summary of the conversation goes here.
+                            </p>
+                        </div>
+                    </article>
+
+                    <article class="conversation-card">
+                        <img src="images/foto3.png" alt="Previous conversation">
+                        <div class="card-content">
+                            <h3>Example</h3>
+                            <p>
+                                A short summary of the conversation goes here.
+                            </p>
+                        </div>
+                    </article>
+
+                </div>
+
+                <button class="carousel-button next-button">
+                    ›
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- LEAVE A MARK -->
+        <section id="mark" class="mark-section">
+
+            <div class="mark-heading">
+                <h2>Leave a mark.</h2>
+
+                <p>
+                    Tell people something in your own language.
+                </p>
+            </div>
+
+            <div class="mark-board">
+
+                <div class="mark-controls">
+
+                    <textarea
+                        id="mark-text"
+                        maxlength="180"
+                        placeholder="Write something..."
+                    ></textarea>
+
+                    <div class="mark-actions">
+
+                        <select id="mark-color">
+                            <option value="cream">Cream</option>
+                            <option value="pink">Pink</option>
+                            <option value="yellow">Yellow</option>
+                            <option value="blue">Blue</option>
+                            <option value="green">Green</option>
+                            <option value="purple">Purple</option>
+                        </select>
+
+                        <button id="send-mark">
+                            SEND
+                        </button>
+
+                    </div>
+
+                </div>
+
+                <div class="notes-area" id="notes-area">
+                    <!-- Notes will appear here -->
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ABOUT -->
+        <section id="about" class="about-section">
+
+            <h2>Who are we?</h2>
+
+            <p>
+                Reframe is an independent, international digital platform
+                where people from diverse cultures, languages, and
+                nationalities come together to break down walls of social
+                prejudice. Our goal is to create a comfortable environment
+                where everyone can freely express their ideas and thoughts
+                and openly share their culture.
+            </p>
+
+            <p>
+                Everyone has a memory to tell and an experience to share.
+                At Reframe, we value these and aim to create a safe environment
+                where everyone can share them.
+            </p>
+
+            <p>
+                We are working together to eliminate societal judgments and
+                pressures on this path, where we aim for people to approach
+                one another with tolerance and without judgment.
+            </p>
+
+        </section>
+
+
+        <!-- JOIN -->
+        <section id="join" class="join-section">
+
+            <h2>Join Us!</h2>
+
+            <div class="join-content">
+
+                <div class="join-text">
+                    <p>
+                        If you also want to experience different perspectives,
+                        you can fill out the form.
+                    </p>
+                </div>
+
+
+                <<form
+                     id="join-form"
+                     action="https://api.web3forms.com/submit"
+                     method="POST"
+>
+
+                     <input
+                        type="hidden"
+                        name="access_key"
+                        value="cce7c059-09a7-4849-b5f5-30b2f495a149"
+                    />
+
+                     <input
+                        type="hidden"
+                        name="subject"
+                        value="New Reframe Application"
+                    />
+
+                    
+                      <div class="form-row">
+
+                        <div class="form-field">
+                            <label for="first-name">First name</label>
+                            <input
+                                type="text"
+                                id="first-name"
+                                name="first_name"
+                                required
+                            >
+                        </div>
+
+                        <div class="form-field">
+                            <label for="last-name">Last name</label>
+                            <input
+                                type="text"
+                                id="last-name"
+                                name="last_name"
+                                required
+                            >
+                        </div>
+
+                    </div>
+
+
+                    <div class="form-row">
+
+                        <div class="form-field country-code">
+
+                            <label for="country-code">
+                                Country code
+                            </label>
+
+                            <select
+                                id="country-code"
+                                name="country_code"
+                                required
+                            >
+                                <option value="+90">Türkiye (+90)</option>
+                                <option value="+44">United Kingdom (+44)</option>
+                                <option value="+49">Germany (+49)</option>
+                                <option value="+33">France (+33)</option>
+                                <option value="+34">Spain (+34)</option>
+                                <option value="+39">Italy (+39)</option>
+                                <option value="+31">Netherlands (+31)</option>
+                                <option value="+1">USA / Canada (+1)</option>
+                                <option value="+81">Japan (+81)</option>
+                                <option value="+82">South Korea (+82)</option>
+                                <option value="+86">China (+86)</option>
+                                <option value="+91">India (+91)</option>
+                                <option value="+55">Brazil (+55)</option>
+                                <option value="+61">Australia (+61)</option>
+                            </select>
+
+                        </div>
+
+
+                        <div class="form-field">
+                            <label for="location">
+                                Where are you joining from?
+                            </label>
+
+                            <input
+                                type="text"
+                                id="location"
+                                name="location"
+                                placeholder="Country / City"
+                                required
+                            >
+                        </div>
+
+                    </div>
+
+
+                    <div class="form-row">
+
+                        <div class="form-field">
+                            <label for="age">Age</label>
+
+                            <input
+                                type="number"
+                                id="age"
+                                name="age"
+                                min="0"
+                                max="100"
+                                required
+                            >
+                        </div>
+
+
+                        <div class="form-field">
+                            <label for="email">
+                                Email
+                            </label>
+
+                            <input
+                                type="email"
+                                id="email"
+                                name="email"
+                                required
+                            >
+                        </div>
+
+                    </div>
+
+
+                    <div class="form-field">
+
+                        <label for="reason">
+                            Why do you want to join Reframe?
+                        </label>
+
+                        <textarea
+                            id="reason"
+                            name="reason"
+                            rows="5"
+                            required
+                        ></textarea>
+
+                    </div>
+
+
+                    <button type="submit" class="submit-button">
+                        SEND
+                    </button>
+
+                    <p id="form-message"></p>
+
+                </form>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- FOOTER -->
+    <footer>
+
+        <div class="footer-logo">
+            Reframe
+        </div>
+
+        <div class="social-links">
+            Instagram · TikTok
+        </div>
+
+        <div class="email">
+            @reframepr0je3t@gmail.com
+        </div>
+
+    </footer>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>

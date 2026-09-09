@@ -1,0 +1,724 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display&display=swap');
+
+:root {
+    --navy: #12114C;
+    --lavender: #807C98;
+    --cream: #E6DFD2;
+    --white: #F7F5EF;
+    --black: #000000;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--navy);
+    color: var(--cream);
+    font-family: "CMU Serif", Georgia, serif;
+    overflow-x: hidden;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+
+/* =========================
+   NAVBAR
+========================= */
+
+.navbar {
+    height: 70px;
+    padding: 0 25px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    border-bottom: 3px solid var(--cream);
+}
+
+.logo {
+    font-family: "Amarego", Georgia, serif;
+    font-size: 48px;
+    font-weight: bold;
+}
+
+.navbar nav {
+    display: flex;
+    gap: 6px;
+    font-size: 17px;
+}
+
+.navbar nav a {
+    transition: opacity 0.3s ease;
+}
+
+.navbar nav a:hover {
+    opacity: 0.6;
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+    min-height: 330px;
+    padding: 60px 4% 30px;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+}
+
+.hero-intro h1,
+.next-topic h2,
+.mark-heading h2,
+.about-section h2,
+.join-section h2,
+.section-title h2 {
+    font-family: "Amarego", Georgia, serif;
+}
+
+.hero-intro h1 {
+    font-size: 43px;
+    margin-bottom: 10px;
+}
+
+.hero-intro p {
+    max-width: 430px;
+    font-size: 18px;
+    line-height: 1.45;
+}
+
+.next-topic h2 {
+    font-size: 38px;
+    margin-bottom: 8px;
+}
+
+.topic-card {
+    width: 185px;
+    height: 115px;
+
+    background-color: var(--cream);
+    color: var(--navy);
+
+    border: 4px solid var(--lavender);
+    border-radius: 13px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-family: "CMU Serif", Georgia, serif;
+    font-size: 31px;
+
+    transition: transform 0.4s ease;
+}
+
+.topic-card:hover {
+    transform: rotate(-2deg) scale(1.03);
+}
+
+
+/* =========================
+   COUNTDOWN
+========================= */
+
+.countdown-section {
+    padding: 10px 3% 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 10px;
+}
+
+.time-box {
+    width: 17%;
+    text-align: center;
+}
+
+.number {
+    height: 180px;
+
+    background-color: var(--cream);
+    color: var(--navy);
+
+    border: 4px solid var(--lavender);
+    border-radius: 13px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 50px;
+}
+
+.line {
+    height: 3px;
+    background-color: var(--lavender);
+    margin-top: -3px;
+}
+
+.label {
+    margin-top: 4px;
+
+    font-family: "Amarego", Georgia, serif;
+    font-size: 35px;
+}
+
+.separator {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+
+    color: var(--lavender);
+    font-size: 35px;
+}
+
+.timezone-note {
+    text-align: center;
+    font-size: 14px;
+    opacity: 0.8;
+    margin: 10px 0 60px;
+}
+
+
+/* =========================
+   PREVIOUS CONVERSATIONS
+========================= */
+
+.previous-section {
+    padding-bottom: 80px;
+}
+
+.section-title {
+    width: 100%;
+    padding: 7px 4%;
+
+    background-color: var(--lavender);
+    color: var(--cream);
+}
+
+.section-title h2 {
+    font-size: 42px;
+}
+
+.conversation-carousel {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    overflow: hidden;
+    padding: 30px 0;
+}
+
+.cards-track {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 80px;
+
+    transition: transform 0.8s ease;
+}
+
+.conversation-card {
+    width: 200px;
+    min-width: 200px;
+    height: 260px;
+
+    background-color: var(--cream);
+    color: var(--black);
+
+    border: 4px solid black;
+    border-radius: 13px;
+
+    overflow: hidden;
+
+    transition:
+        transform 0.8s ease,
+        opacity 0.8s ease;
+}
+
+.conversation-card.active {
+    width: 230px;
+    min-width: 230px;
+    height: 320px;
+    transform: scale(1.05);
+}
+
+.conversation-card img {
+    width: 100%;
+    height: 130px;
+    object-fit: contain;
+    display: block;
+}
+
+.conversation-card.active img {
+    height: 145px;
+    object-fit: cover;
+    display: block;
+}
+
+.card-content {
+    padding: 8px;
+}
+
+.card-content h3 {
+    font-family: Arial, sans-serif;
+    font-size: 20px;
+    margin-bottom: 5px;
+}
+
+.card-content p {
+    font-size: 12px;
+    line-height: 1.25;
+}
+
+.carousel-button {
+    position: absolute;
+    z-index: 10;
+
+    width: 38px;
+    height: 38px;
+
+    border: none;
+    border-radius: 50%;
+
+    background: var(--lavender);
+    color: var(--cream);
+
+    font-size: 30px;
+    cursor: pointer;
+}
+
+.previous-button {
+    left: 15px;
+}
+
+.next-button {
+    right: 15px;
+}
+
+.conversation-carousel {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    overflow: hidden;
+    padding: 55px 0 80px;
+}
+
+/* =========================
+   LEAVE A MARK
+========================= */
+
+.mark-section {
+    padding-bottom: 70px;
+}
+
+.mark-heading {
+    padding: 0 5%;
+    margin-bottom: 10px;
+}
+
+.mark-heading h2 {
+    font-size: 45px;
+}
+
+.mark-heading p {
+    font-size: 18px;
+}
+
+.mark-board {
+    position: relative;
+
+    width: 94%;
+    height: 500px;
+    margin: auto;
+
+    background-color: var(--lavender);
+
+    overflow: hidden;
+}
+
+.mark-controls {
+    position: absolute;
+    top: 25px;
+    left: 20px;
+    z-index: 100;
+
+    width: 340px;
+
+    padding: 15px;
+
+    background-color: var(--cream);
+}
+
+.mark-controls textarea {
+    width: 100%;
+    height: 70px;
+
+    padding: 8px;
+
+    border: none;
+    outline: none;
+
+    background: transparent;
+    color: var(--navy);
+
+    font-family: "CMU Serif", Georgia, serif;
+    font-size: 16px;
+
+    resize: none;
+}
+
+.mark-actions {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 5px;
+}
+
+.mark-actions select,
+.mark-actions button {
+    background-color: var(--lavender);
+    color: var(--cream);
+
+    border: 1px solid var(--navy);
+    border-radius: 20px;
+
+    padding: 5px 10px;
+
+    cursor: pointer;
+}
+
+
+/* =========================
+   NOTES
+========================= */
+
+.note {
+    position: absolute;
+
+    width: 150px;
+    min-height: 90px;
+
+    padding: 18px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    font-family: "CMU Serif", Georgia, serif;
+    font-size: 14px;
+
+    color: var(--black);
+
+    border-radius: 2px;
+
+    box-shadow:
+        0 4px 10px rgba(0, 0, 0, 0.12);
+
+    animation: noteAppear 0.6s ease;
+}
+.note.pink {
+    background-color: #DDA7E8;
+}
+
+.note.yellow {
+    background-color: #FFE066;
+}
+
+.note.blue {
+    background-color: #56D1D4;
+}
+
+.note.green {
+    background-color: #B7FF61;
+}
+
+.note.purple {
+    background-color: #D1A2EA;
+}
+
+.note.cream {
+    background-color: var(--cream);
+}
+
+@keyframes noteAppear {
+
+    0% {
+        opacity: 0;
+        transform: scale(0.75) rotate(0deg);
+    }
+
+    70% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+
+/* =========================
+   ABOUT
+========================= */
+
+.about-section {
+    padding: 0 5% 80px;
+}
+
+.about-section h2 {
+    font-size: 47px;
+    margin-bottom: 20px;
+}
+
+.about-section p {
+    max-width: 950px;
+    font-size: 17px;
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+
+
+/* =========================
+   JOIN
+========================= */
+
+.join-section {
+    background-color: var(--lavender);
+    color: var(--cream);
+
+    padding: 50px 5% 80px;
+}
+
+.join-section h2 {
+    font-size: 55px;
+    margin-bottom: 30px;
+}
+
+.join-content {
+    display: grid;
+    grid-template-columns: 35% 65%;
+    gap: 40px;
+}
+
+.join-text {
+    background-color: var(--navy);
+    padding: 30px;
+
+    font-size: 19px;
+    line-height: 1.5;
+
+    min-height: 180px;
+}
+
+#join-form {
+    background-color: var(--cream);
+    color: var(--navy);
+
+    padding: 30px;
+
+    border-radius: 10px;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+.form-field {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+}
+
+.form-field label {
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+
+.form-field input,
+.form-field select,
+.form-field textarea {
+    padding: 10px;
+
+    border: 2px solid var(--lavender);
+    border-radius: 5px;
+
+    font-family: inherit;
+    font-size: 15px;
+
+    background: white;
+}
+
+.form-field textarea {
+    resize: vertical;
+}
+
+.submit-button {
+    margin-top: 5px;
+
+    border: none;
+    border-radius: 20px;
+
+    padding: 10px 25px;
+
+    background-color: var(--navy);
+    color: var(--cream);
+
+    cursor: pointer;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    min-height: 150px;
+
+    padding: 25px 5%;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    background-color: var(--navy);
+}
+
+.footer-logo {
+    font-family: "Amarego", Georgia, serif;
+    font-size: 35px;
+}
+
+.social-links,
+.email {
+    font-size: 14px;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 700px) {
+
+    .navbar {
+        height: auto;
+        padding: 15px;
+        align-items: flex-start;
+    }
+
+    .logo {
+        font-size: 34px;
+    }
+
+    .navbar nav {
+        gap: 4px;
+        font-size: 11px;
+        flex-wrap: wrap;
+        justify-content: flex-end;
+    }
+
+    .hero {
+        grid-template-columns: 1fr;
+        padding: 40px 7%;
+    }
+
+    .hero-intro h1 {
+        font-size: 36px;
+    }
+
+    .next-topic h2 {
+        font-size: 31px;
+    }
+
+    .countdown-section {
+        gap: 3px;
+    }
+
+    .time-box {
+        width: 23%;
+    }
+
+    .number {
+        height: 110px;
+        font-size: 30px;
+    }
+
+    .label {
+        font-size: 23px;
+    }
+
+    .separator {
+        font-size: 20px;
+        gap: 12px;
+    }
+
+    .section-title h2 {
+        font-size: 31px;
+    }
+
+    .cards-track {
+        gap: 35px;
+    }
+
+    .conversation-card:not(.active) {
+        opacity: 0.45;
+    }
+
+    .mark-board {
+        height: 550px;
+    }
+
+    .mark-controls {
+        width: calc(100% - 30px);
+        left: 15px;
+    }
+
+    .join-content {
+        grid-template-columns: 1fr;
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+
+    footer {
+        flex-direction: column;
+        gap: 20px;
+        text-align: center;
+    }
+}
+#form-message {
+    display: none;
+
+    margin-top: 15px;
+
+    font-family: "CMU Serif", Georgia, serif;
+    font-size: 15px;
+
+    line-height: 1.4;
+}
