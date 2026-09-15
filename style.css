@@ -443,20 +443,28 @@ a {
     background-color: #DDA7E8;
 }
 
+.note.orange {
+    background-color: #ee8a2c;
+}
+
+.note.red {
+    background-color: #d81010;
+}
+
 .note.yellow {
     background-color: #FFE066;
 }
 
 .note.blue {
-    background-color: #56D1D4;
+    background-color: #3f47bb;
 }
 
 .note.green {
-    background-color: #B7FF61;
+    background-color: #3bf144;
 }
 
 .note.purple {
-    background-color: #D1A2EA;
+    background-color: #b65ae7;
 }
 
 .note.cream {
