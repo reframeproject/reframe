@@ -207,6 +207,7 @@ function createNote(text, color) {
     const note = document.createElement("div");
 
     note.classList.add("note", color);
+    console.log("Note color:", color);
 
     note.textContent = text;
 
@@ -417,16 +418,12 @@ async function saveNote(text, color) {
         })
     });
 
-    const result = await response.text();
-
-    console.log("Supabase status:", response.status);
-    console.log("Supabase response:", result);
-
     if (!response.ok) {
-        throw new Error(result);
-    }
+    const errorText = await response.text();
+    throw new Error(errorText);
+}
 
-    return result;
+return true;
 }
 
 
