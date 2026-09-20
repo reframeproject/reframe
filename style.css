@@ -730,3 +730,97 @@ footer {
 
     line-height: 1.4;
 }
+/* =========================
+   VERIFY CERTIFICATE
+   ========================= */
+
+.verify-section {
+    padding: 100px 8%;
+    text-align: center;
+}
+
+.verify-content {
+    max-width: 650px;
+    margin: 0 auto;
+}
+
+.verify-content p {
+    margin-bottom: 30px;
+    line-height: 1.6;
+}
+
+.verify-form {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+#certificate-id {
+    width: 300px;
+    padding: 14px 18px;
+
+    border: 1px solid #807C98;
+    border-radius: 8px;
+
+    background: #F7F5EF;
+    color: #12114C;
+
+    font-family: inherit;
+    font-size: 15px;
+
+    outline: none;
+
+    display: block;
+    visibility: visible;
+    opacity: 1;
+    box-sizing: border-box;
+}
+
+#certificate-id:focus {
+    border-color: #12114C;
+    background: #F7F5EF;
+    color: #12114C;
+}
+
+#verify-button {
+    padding: 14px 24px;
+    border: none;
+    border-radius: 8px;
+    background-color: #12114C;
+    color: #E6DFD2;
+    font-family: inherit;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+#verify-button:hover {
+    opacity: 0.85;
+}
+
+#certificate-result {
+    margin-top: 30px;
+    min-height: 20px;
+}
+
+.certificate-valid {
+    padding: 25px;
+    border: 1px solid #807C98;
+    border-radius: 12px;
+    background-color: rgba(230, 223, 210, 0.5);
+    text-align: left;
+}
+
+.certificate-valid h3 {
+    margin-top: 0;
+    color: #12114C;
+}
+
+.certificate-valid p {
+    margin: 8px 0;
+}
+
+.certificate-invalid {
+    color: #12114C;
+    padding: 15px;
+}
