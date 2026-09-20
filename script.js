@@ -613,3 +613,143 @@ if (joinForm) {
         }
     });
 }
+/* =========================================
+   5. CERTIFICATE VERIFICATION
+========================================= */
+
+const certificateInput =
+    document.getElementById("certificate-id");
+
+const verifyButton =
+    document.getElementById("verify-button");
+
+const certificateResult =
+    document.getElementById("certificate-result");
+
+
+if (verifyButton) {
+
+    verifyButton.addEventListener("click", async () => {
+
+        const certificateId =
+            certificateInput.value.trim().toUpperCase();
+
+
+        if (!certificateId) {
+
+            certificateResult.innerHTML =
+                `<div class="certificate-invalid">
+                    Please enter a certificate ID.
+                </div>`;
+
+            return;
+        }
+
+
+        verifyButton.disabled = true;
+        verifyButton.textContent = "VERIFYING...";
+
+
+        try {
+
+            const response = await fetch(
+                `${SUPABASE_URL}/rest/v1/certificates?certificate_id=eq.${encodeURIComponent(certificateId)}&select=certificate_id,recipient_name,certificate_type,event_name,issue_date,status`,
+                {
+                    method: "GET",
+
+                    headers: {
+                        "apikey": SUPABASE_KEY,
+                        "Authorization": `Bearer ${SUPABASE_KEY}`
+                    }
+                }
+            );
+
+
+            if (!response.ok) {
+                throw new Error("Verification request failed.");
+            }
+
+
+            const certificates =
+                await response.json();
+
+
+            if (certificates.length === 0) {
+
+                certificateResult.innerHTML =
+                    `<div class="certificate-invalid">
+                        Certificate not found.
+                    </div>`;
+
+            } else {
+
+                const certificate =
+                    certificates[0];
+
+
+                if (certificate.status !== "valid") {
+
+                    certificateResult.innerHTML =
+                        `<div class="certificate-invalid">
+                            This certificate is no longer valid.
+                        </div>`;
+
+                } else {
+
+                    certificateResult.innerHTML =
+                        `<div class="certificate-valid">
+
+                            <h3>✓ Certificate Valid</h3>
+
+                            <p>
+                                <strong>Recipient:</strong>
+                                ${certificate.recipient_name}
+                            </p>
+
+                            <p>
+                                <strong>Certificate:</strong>
+                                ${certificate.certificate_type}
+                            </p>
+
+                            <p>
+                                <strong>Event:</strong>
+                                ${certificate.event_name}
+                            </p>
+
+                            <p>
+                                <strong>Issue date:</strong>
+                                ${certificate.issue_date}
+                            </p>
+
+                            <p>
+                                <strong>Certificate ID:</strong>
+                                ${certificate.certificate_id}
+                            </p>
+
+                            <p>
+                                <strong>Status:</strong>
+                                Valid
+                            </p>
+
+                        </div>`;
+                }
+            }
+
+        } catch (error) {
+
+            console.error(error);
+
+            certificateResult.innerHTML =
+                `<div class="certificate-invalid">
+                    Something went wrong. Please try again.
+                </div>`;
+
+        }
+
+
+        verifyButton.disabled = false;
+        verifyButton.textContent = "VERIFY";
+
+    });
+
+}
